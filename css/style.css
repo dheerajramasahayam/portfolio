@@ -52,7 +52,7 @@ h1, h2, h3{ line-height:1.2; color:var(--text); }
 
 /* Layout */
 
-main, .topnav-inner{
+main{
   max-width:72rem;
   margin:0 auto;
 }
@@ -61,6 +61,7 @@ section{
   max-width:72rem;
   margin:0 auto;
   padding:5rem 1.5rem;
+  scroll-margin-top:5rem;
 }
 
 section > h2{
@@ -150,6 +151,7 @@ section > h2{
   content:"";
   position:absolute;
   inset:0;
+  z-index:1;
   background:radial-gradient(ellipse at center, rgba(10,15,26,.55) 0%, rgba(10,15,26,.75) 45%, rgba(10,15,26,.95) 100%);
   pointer-events:none;
 }
