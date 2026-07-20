@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dheeraj Ramasahayam — Self-Healing Datacenter Networks</title>
+<meta name="description" content="Network engineer and researcher: AI-driven failure prediction, root cause analysis, and autonomous recovery for datacenter networks. 7 papers, patent pending, hyperscale field experience.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2322d3ee'/></svg>">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="topnav" aria-label="Primary">
+  <a href="#research">Research</a><a href="#patent">Patent</a><a href="#fieldwork">Field Work</a>
+  <a href="#projects">Code</a><a href="#contact">Contact</a>
+  <a class="btn-resume" href="assets/resume/Dheeraj_Ramasahayam_Resume.pdf">Resume PDF</a>
+</nav>
+<header class="hero">
+  <canvas id="topology" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <p class="kicker">Dheeraj Ramasahayam</p>
+    <h1>I build datacenter networks that fix themselves.</h1>
+    <p class="sub">Network engineer with 3+ years in hyperscale data centers, and researcher in AI-driven failure prediction, root cause analysis, and autonomous recovery.</p>
+    <ul class="stats">
+      <li>3+ yrs hyperscale field work</li>
+      <li>7 research papers</li>
+      <li>1 patent pending</li>
+      <li>4 open-source repos</li>
+    </ul>
+    <p class="hero-caption">Live above: a Clos fabric losing a link, rerouting, and healing — my research automates exactly this: predict, detect, localize, recover.</p>
+  </div>
+</header>
+<main id="main">
+  <section id="problem" class="reveal"><h2>The Problem</h2><p>Every AI model, hospital record, financial transaction, and video call crosses a datacenter network. When those networks fail, recovery is still largely manual: engineers paging through dashboards while services degrade. Hyperscale operators measure these outages in millions of dollars per hour — and the AI buildout is multiplying network scale faster than operations teams can grow. My work attacks this from both ends: hands-on infrastructure delivery for the largest cloud operators, and published research toward networks that predict, diagnose, and repair their own failures.</p></section>
+  <section id="research" class="reveal"><h2>Research</h2>
+    <p class="section-lede">Seven papers forming one program: predict failures → detect intrusions → benchmark root cause analysis → unify into a self-healing system → make it explainable → federate it across sites → harden the wireless edge.</p>
+    <ol class="paper-line">
+      <li><article class="card paper-card">
+        <span class="badge">Published · Authorea · Mar 2026</span>
+        <h3>Temporal Attention-Guided Sequence Learning for Zero-Shot Generalization in Datacenter Network Failures</h3>
+        <p>An early-warning system that predicts datacenter network failures up to 60 seconds before they happen. Combines an LSTM sequence model with a custom self-attention mechanism, and generalizes zero-shot to failure types it was never trained on.</p>
+        <p class="links"><a href="https://doi.org/10.22541/au.177368699.90508683/v1">DOI</a>
+        <a href="assets/papers/datacenter_failure_prediction.pdf">PDF</a>
+        <a href="https://github.com/dheerajramasahayam/datacenter-network-failure-predictor">Code</a></p>
+      </article></li>
+      <li><article class="card paper-card">
+        <span class="badge">Published · Authorea · Mar 2026</span>
+        <h3>Drift-Adaptive Intrusion Detection for Enterprise Networks</h3>
+        <p>Enterprise intrusion detection that keeps working as attack traffic evolves. Aligns four public benchmarks (UNSW-NB15, NSL-KDD, CICIDS2017, CSE-CIC-IDS2018) into one 41-feature representation and adds an online drift-adaptive controller on top of a hybrid ensemble.</p>
+        <p class="links"><a href="https://doi.org/10.22541/au.177402875.52526953/v1">DOI</a>
+        <a href="assets/papers/drift_adaptive_intrusion_detection.pdf">PDF</a>
+        <a href="https://github.com/dheerajramasahayam/ai-network-threat-detection">Code</a></p>
+      </article></li>
+      <li><article class="card paper-card">
+        <span class="badge">Published · Authorea · Mar 2026</span>
+        <h3>ClosRCA-Bench: An Open Topology-Grounded Benchmark and Counterfactual Recovery Framework for Self-Healing Datacenter Networks</h3>
+        <p>An open benchmark for root cause analysis in Clos datacenter fabrics, with fixed splits, public scripts, and a counterfactual framework that validates whether a proposed fix would actually restore the network. Dataset and code archived on Zenodo (DOI 10.5281/zenodo.19059194).</p>
+        <p class="links"><a href="https://doi.org/10.22541/au.177402886.66308404/v1">DOI</a>
+        <a href="assets/papers/clos_rca_bench.pdf">PDF</a>
+        <a href="https://github.com/dheerajramasahayam/clos-rca-bench">Code</a></p>
+      </article></li>
+      <li><article class="card paper-card">
+        <span class="badge">Published · Authorea · Mar 2026</span>
+        <h3>Autonomous Self-Healing Datacenter Networks: A Unified AI System for Prediction, Detection, Root Cause Analysis, and Recovery</h3>
+        <p>The flagship systems paper: a unified AI pipeline that predicts failures from telemetry, detects intrusions under drift, localizes root causes on the topology, and executes safety-gated recovery validated in a digital twin before touching production.</p>
+        <p class="links"><a href="https://doi.org/10.22541/au.177402935.53246540/v1">DOI</a>
+        <a href="assets/papers/autonomous_self_healing.pdf">PDF</a></p>
+      </article></li>
+      <li><article class="card paper-card">
+        <span class="badge">Published · Authorea · Mar 2026</span>
+        <h3>Explainable AI for Root Cause Analysis in Large-Scale Datacenter Networks</h3>
+        <p>Makes AI-driven root cause analysis trustworthy for operators: explainability methods that show <em>why</em> the model blames a device or link, evaluated for scalability on large datacenter topologies.</p>
+        <p class="links"><a href="https://doi.org/10.22541/au.177490729.94263354/v1">DOI</a>
+        <a href="assets/papers/xai_network_rca.pdf">PDF</a>
+        <a href="https://github.com/dheerajramasahayam/xai-network-rca">Code</a></p>
+      </article></li>
+      <li><article class="card paper-card">
+        <span class="badge">Preprint · Under review</span>
+        <h3>Federated and Continual Learning for Autonomous Self-Healing Datacenter Networks</h3>
+        <p>Extends self-healing networks across organizations: federated and continual learning so multiple datacenters improve a shared model without sharing raw telemetry, and without forgetting older failure modes.</p>
+        <p class="links"><a href="assets/papers/federated_self_healing.pdf">PDF</a></p>
+      </article></li>
+      <li><article class="card paper-card">
+        <span class="badge">In preparation</span>
+        <h3>Self-Evolving AI Framework for Evaluating Wireless Authentication Robustness in WPA2/WPA3 Networks</h3>
+        <p>A self-evolving AI framework for stress-testing WPA2/WPA3 wireless authentication, probing robustness of enterprise Wi-Fi security. Manuscript in preparation.</p>
+        <p class="links"><a href="assets/papers/wireless_wpa2_wpa3.pdf">PDF</a></p>
+      </article></li>
+    </ol>
+  </section>
+  <section id="patent" class="reveal"><h2>Patent — Self-Evolving Multi-Reality Network Infrastructure</h2>
+    <p class="patent-meta">U.S. Provisional Application No. 64/020,128 · Filed March 28, 2026 · <strong>Patent Pending</strong></p>
+    <p>An infrastructure control system that maintains multiple candidate 'realities' of a network — simulated execution branches with temporal state rewriting — and recursively compares their predicted outcomes against live observations. The system evolves its own control policies and commits only changes proven safe in simulation, extending self-healing from reaction to anticipation.</p>
+  </section>
+  <section id="fieldwork" class="reveal"><h2>Field Work</h2>
+    <p class="section-lede">Deployment log — hyperscale and enterprise infrastructure delivered.</p>
+    <ul class="deploy-log">
+      <li class="log-entry">
+        <h3>Data Center Network Technician — Ericsson (contract)</h3>
+        <p class="log-meta">Oct 2025–Present</p>
+        <ul>
+          <li>Build, install, and decommission hyperscale network infrastructure: Cisco 7800/7900 routers, Ciena transponders, fiber interconnect modules, structured fiber paths.</li>
+          <li>Cut average incident resolution time by 30% through enhanced monitoring and rewritten SOPs.</li>
+          <li>J3 migration work converting live EB device connectivity from LC-to-LC to LC-to-MDC patch panels.</li>
+        </ul>
+      </li>
+      <li class="log-entry">
+        <h3>AWS Deployment — Hermiston, OR</h3>
+        <p class="log-meta">Hermiston, OR</p>
+        <ul>
+          <li>Coordinated day-to-day execution of large AWS deployment workstreams: technician assignments, fiber/copper runs, breakout cable installation, rack-level completion.</li>
+          <li>Quality-checked routed fiber, copper patching, labeling, tray paths, and equipment connections before production windows.</li>
+          <li>Supported GB200/GB300 AI-infrastructure troubleshooting: cabling paths, optics seating, link status, escalation to engineering.</li>
+        </ul>
+      </li>
+      <li class="log-entry">
+        <h3>Meta Migration — Denver, CO</h3>
+        <p class="log-meta">Denver, CO</p>
+        <ul>
+          <li>Led migration support for live production rack moves: optical refresh, fiber path mapping, connectivity validation, legacy path removal.</li>
+          <li>Validated PSU health, rack power, switch bring-up, and console access before migration sign-off.</li>
+          <li>Used Fluke, VFL, and OTDR testing to confirm continuity and signal quality across production links, working with Meta engineers to isolate and restore down links.</li>
+        </ul>
+      </li>
+      <li class="log-entry">
+        <h3>Google Deployment &amp; Decom — Ohio</h3>
+        <p class="log-meta">Ohio</p>
+        <ul>
+          <li>Built, racked, cabled, and validated Cisco 7800/7900 devices in cage environments; confirmed port mapping, optics placement, and connectivity before handoff.</li>
+          <li>Decommissioned legacy fiber paths: traced circuits, removed unused jumpers, validated patch-panel records.</li>
+          <li>Performed VFL/OTDR validation and break-fix support on live fiber and device infrastructure.</li>
+        </ul>
+      </li>
+      <li class="log-entry">
+        <h3>Jr Network Engineer — Metapicks LLC</h3>
+        <p class="log-meta">Fort Worth, TX — Jul 2024–Oct 2025</p>
+        <ul>
+          <li>Managed enterprise LAN/WAN for 500+ users: routing, switching, ASA firewalls, AnyConnect VPN, VLAN segmentation.</li>
+          <li>Cut downtime 20% using SolarWinds NPM and Wireshark monitoring and root-cause work.</li>
+          <li>Built Azure VPN Gateway hybrid connectivity and authored topology diagrams, SOPs, and runbooks.</li>
+        </ul>
+      </li>
+      <li class="log-entry">
+        <h3>Network Support Assistant — New England College</h3>
+        <p class="log-meta">Henniker, NH — Jun 2023–Jun 2024</p>
+        <ul>
+          <li>Supported campus-wide Cisco switching, routing, and wireless at 99.9%+ uptime.</li>
+          <li>Proactive monitoring with PRTG; patched and upgraded L2/L3 devices.</li>
+          <li>Traced fiber/copper uplinks, validated patch-panel mappings, coordinated vendor fusion-splice repairs and as-built updates.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section id="projects" class="reveal"><h2>Projects &amp; Code</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>clos-rca-bench</h3>
+        <p>Open RCA benchmark with Zenodo-archived dataset, fixed splits, CI, and reproduction scripts.</p>
+        <p class="links"><a href="https://github.com/dheerajramasahayam/clos-rca-bench">GitHub</a></p>
+      </div>
+      <div class="card">
+        <h3>xai-network-rca</h3>
+        <p>Explainable RCA toolkit; IEEE TNSM draft, tested Python package with CI.</p>
+        <p class="links"><a href="https://github.com/dheerajramasahayam/xai-network-rca">GitHub</a></p>
+      </div>
+      <div class="card">
+        <h3>ai-network-threat-detection</h3>
+        <p>Drift-adaptive IDS benchmark across four public datasets; Dockerized, reproducible.</p>
+        <p class="links"><a href="https://github.com/dheerajramasahayam/ai-network-threat-detection">GitHub</a></p>
+      </div>
+      <div class="card">
+        <h3>datacenter-network-failure-predictor</h3>
+        <p>PyTorch LSTM+attention failure predictor with notebooks, configs, and results.</p>
+        <p class="links"><a href="https://github.com/dheerajramasahayam/datacenter-network-failure-predictor">GitHub</a></p>
+      </div>
+      <div class="card">
+        <h3>Enterprise Monitoring &amp; SIEM Lab</h3>
+        <p>Proxmox-based enterprise lab with SIEM alerting, firewall log integration, and Azure monitoring deployment (40% faster incident response).</p>
+      </div>
+      <div class="card">
+        <h3>Virtualized Home Infrastructure</h3>
+        <p>Multi-VM Proxmox environment for VPN, media, and Linux services; 30% hosting cost reduction.</p>
+      </div>
+    </div>
+  </section>
+  <section id="skills" class="reveal"><h2>Skills &amp; Certifications</h2>
+    <h3 class="chip-label">Networking &amp; Protocols</h3>
+    <ul class="chips">
+      <li>TCP/IP</li><li>BGP</li><li>OSPF</li><li>EIGRP</li><li>MPLS</li><li>VLAN</li><li>VPN</li><li>NAT</li><li>QoS</li><li>DNS/DHCP</li>
+    </ul>
+    <h3 class="chip-label">Hardware &amp; Optical</h3>
+    <ul class="chips">
+      <li>Cisco 7800/7900</li><li>Ciena transponders</li><li>LC/MDC/MPO fiber</li><li>OTDR/VFL</li><li>fusion splicing</li><li>rack builds</li><li>structured cabling</li>
+    </ul>
+    <h3 class="chip-label">Monitoring &amp; Analysis</h3>
+    <ul class="chips">
+      <li>SolarWinds NPM</li><li>Wireshark</li><li>PRTG</li><li>SNMP</li><li>NetFlow</li><li>Nmap</li><li>Nessus</li>
+    </ul>
+    <h3 class="chip-label">Cloud &amp; Virtualization</h3>
+    <ul class="chips">
+      <li>Azure</li><li>AWS (EC2/VPC)</li><li>Proxmox</li><li>VMware ESXi</li>
+    </ul>
+    <h3 class="chip-label">Scripting &amp; ML</h3>
+    <ul class="chips">
+      <li>Python/PyTorch</li><li>Bash</li><li>PowerShell</li><li>YAML</li>
+    </ul>
+    <p class="certs">CCNA · CEH v11 (EC-Council) · IBM Cybersecurity Analyst · CompTIA A+ · CompTIA ITF+ · Certified Scrum Master · OSHA 10</p>
+    <p class="education">M.S. Computer Information Systems, New England College (2024) · B.E. Electrical &amp; Electronics Engineering, NIT Andhra Pradesh (2022)</p>
+  </section>
+  <section id="contact" class="reveal"><h2>Contact</h2>
+    <p><a href="mailto:dheerajramasahayam@gmail.com">dheerajramasahayam@gmail.com</a> ·
+       <a href="https://github.com/dheerajramasahayam">GitHub</a> ·
+       <a href="https://www.linkedin.com/in/dheeraj-ramasahayam">LinkedIn</a> ·
+       <a href="assets/resume/Dheeraj_Ramasahayam_Resume.pdf">Resume (PDF)</a></p>
+  </section>
+</main>
+<footer><p>© 2026 Dheeraj Ramasahayam</p></footer>
+<script src="js/topology.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
