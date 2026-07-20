@@ -116,18 +116,25 @@
     for (var i = 0; i < POOL_SIZE; i++) spawnPacket(i);
   }
 
-  // Re-path any packet currently riding the given (now-failing) edge.
+  // Re-path any packet whose 2-hop path uses the given (now-failing) edge —
+  // both packets already riding it AND packets still on their first hop
+  // that would cross it on their second hop.
   function repathPacketsOnEdge(spineIdx, leafIdx) {
     for (var i = 0; i < POOL_SIZE; i++) {
-      var usesEdge =
-        (pHop[i] === 0 && pSpine[i] === spineIdx && pLeafStart[i] === leafIdx) ||
-        (pHop[i] === 1 && pSpine[i] === spineIdx && pLeafEnd[i] === leafIdx);
+      var usesEdge = pSpine[i] === spineIdx &&
+        (pLeafStart[i] === leafIdx || pLeafEnd[i] === leafIdx);
       if (!usesEdge) continue;
       var s = pickValidSpine(pLeafStart[i], pLeafEnd[i]);
       if (s === -1) continue; // guarded to not happen; leave packet as-is
       pSpine[i] = s;
-      pHop[i] = 0;
-      pT[i] = 0;
+      if (pHop[i] === 1) {
+        // Already past the spine — continue hop 2 from the new spine's
+        // position instead of snapping all the way back to the origin leaf.
+        pT[i] = 0;
+      } else {
+        pHop[i] = 0;
+        pT[i] = 0;
+      }
     }
   }
 
