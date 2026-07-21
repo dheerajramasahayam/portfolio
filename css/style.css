@@ -300,6 +300,13 @@ section > h2{
   color:var(--muted);
 }
 
+.abstract{ margin:0 0 .8rem; border-top:1px solid var(--line); padding-top:.6rem; }
+.abstract summary{ cursor:pointer; font-size:.85rem; color:var(--accent); list-style:none; }
+.abstract summary::-webkit-details-marker{ display:none; }
+.abstract summary::before{ content:"+ "; font-weight:700; }
+.abstract[open] summary::before{ content:"− "; }
+.abstract p{ margin:.6rem 0 0; font-size:.85rem; line-height:1.6; color:var(--muted); }
+
 /* Badges */
 
 .badge{
@@ -447,6 +454,14 @@ html.js .reveal.visible{
 
   #topology, .topnav, .skip{
     display:none !important;
+  }
+
+  .abstract summary{
+    display:none;
+  }
+
+  .abstract p{
+    display:block !important;
   }
 
   .hero{
